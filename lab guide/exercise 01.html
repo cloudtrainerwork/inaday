@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>LAB GUIDE – includes</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://opsgilitylabs.blob.core.windows.net/lablayout/labstyles.css"></link>
+</head>
+<body>
+<h2 id="task-1-setup-the-azure-openai-service">Task 1: Setup the Azure
+OpenAI Service</h2>
+<ol type="1">
+<li>Launch Chrome, and then login to the Azure portal using your Azure
+credentials. Click the cloud icon in the lab player to retrieve
+them.</li>
+</ol>
+<pre><code>https://portal.azure.com</code></pre>
+<ol type="1">
+<li>In order to work with the GPT models from OpenAI, we need to create
+the Azure OpenAI service and deploy the models we will be using. Click
+the <strong>Create a resource</strong> button and search for
+<em>openai</em> in the search bar and select the <strong>Azure
+OpenAI</strong> service.</li>
+</ol>
+<figure>
+<img src="images/openai_0.png" alt="image" />
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<ol type="1">
+<li>This will take you to the <strong>Cognitive Services | Azure
+OpenAI</strong> subpage, either click on <em>+ Create</em> at the top of
+the page or on <em>Create Azure OpenAI</em>.</li>
+</ol>
+<figure>
+<img src="images/openai_1.png" alt="image" />
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<ol type="1">
+<li><p>On the configuration page, select the correct Azure Subscription
+under <em>Project Details</em>. You need to specify the Resource Group
+under which you want the Azure OpenAI resource to be situated. Under
+<em>Instance Details</em> you need to select a deployment region, name
+the Azure OpenAI service and decide on the pricing tier. We selected
+<strong>West Europe</strong>, gave the Azure OpenAI service a fitting
+name and chose the default pricing tier.</p></li>
+<li><p>The next step is to click on <strong>Review + create</strong>. We
+once again do not modify the standard selections under the tabs
+<strong>Network</strong>, <strong>Identity</strong> or
+<strong>Tags</strong>. If you are handling sensitive data or have
+specific networking needs, please consult the official Azure
+resources.</p></li>
+</ol>
+<figure>
+<img src="images/openai_2.png" alt="image" />
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<ol type="1">
+<li>Next, Azure is prompting us to give the resource some tags that make
+it easier to differentiate between multiple instances of the same
+service. Which tags you want to set and how to name their values is
+entirely up to you.</li>
+</ol>
+<figure>
+<img src="images/openai_3.png" alt="image" />
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<ol type="1">
+<li>On the Review page, click on Create if you are happy with your
+configuration. It should take you to the deployment page of the Azure
+OpenAI service. Deployment might take an unexpectedly long time for this
+particular resource - do not be surprised if it takes over an hour to
+finish deployment.</li>
+</ol>
+<figure>
+<img src="images/openai_4.png" alt="image" />
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<ol type="1">
+<li><p>Since the Service has just been created, on the main page of the
+Azure OpenAI Studio it will let you know that you have currently no
+models deployed. Click on <em>Create new deployment</em>. <img
+src="images/openai_6.png" alt="image" /></p></li>
+<li><p>In the newly opened window, you are asked to select one of
+several different OpenAI models for deplyoment. These models are
+dividable by their parameter size (Ada is the smallest models while
+Davinci is the largest) and their respective use cases. There are
+different models for creating text embeddings, code embeddings or
+text/code generation.</p></li>
+</ol>
+<blockquote>
+<p>For a complete list of available models, refer to <a
+href="https://learn.microsoft.com/en-us/azure/cognitive-services/openai/concepts/models#model-summary-table-and-region-availability">Azure
+OpenAI Service models</a>.</p>
+</blockquote>
+<ol type="1">
+<li><p>Since we want to create embeddings of documents and user queries
+with the goal of retrieving relevant sections of our uploaded documents
+with regards to the query, we need to deploy a text search embedding
+model. We select <strong>text-embedding-ada-002</strong>, the newest
+embedding model from OpenAI which creates embeddings with 1536
+dimensions.</p></li>
+<li><p>Under <strong>Deployment Name</strong>, give the model a fitting
+name. Deployment names are the ones we will specify in our
+code.</p></li>
+</ol>
+<figure>
+<img src="images/openai_7.png" alt="image" />
+<figcaption aria-hidden="true">image</figcaption>
+</figure>
+<ol type="1">
+<li>Lastly, we need a text generation model which will output the
+response to the user query. For this, we chose
+<strong>gpt-3.5-turbo</strong>. Also provide a name to utilize
+later.</li>
+</ol>
+<p>The two models we just deployed will be usable in our Azure Function
+and our Frontend.</p>
+<h1 id="exercises">Exercises</h1>
+<p>In this document, you find a few exercises for practicing prompt
+engineering. For each exercise, you’ll get some input text and then an
+expected completion. You task is to write the prompt to achieve the
+expected completion. ___</p>
+<h2 id="exercise-1---german-translation">Exercise 1 - German
+Translation</h2>
+<ul>
+<li>Exercise: Write a prompt that generates the expected completion</li>
+<li>Input text:
+<code>I was enjoying the sun, but then a huge cloud came and covered the sky.</code></li>
+<li>Expected completion:
+<code>Ich genoss die Sonne, aber dann kam eine riesige Wolke und bedeckte den Himmel.</code></li>
+</ul>
+<hr />
+<h2 id="exercise-2---negation">Exercise 2 - Negation</h2>
+<ul>
+<li>Exercise: Write a prompt that generates the expected completion</li>
+<li>Input text:
+<code>I was enjoying the sun, but then a huge cloud came and covered the sky.</code></li>
+<li>Expected completion:
+<code>I was not enjoying the sun, and then a huge cloud did not come and cover the sky.</code></li>
+</ul>
+<hr />
+<h2 id="exercise-3---classification">Exercise 3 - Classification</h2>
+<ul>
+<li><p>Exercise: Write a prompt that generates the expected
+completion</p></li>
+<li><p>Input text:
+<code>Not much to write about here, but it does exactly what it's supposed to. filters out the pop sounds. now my recordings are much more crisp. it is one of the lowest prices pop filters on amazon so might as well buy it, they honestly work the same despite their pricing.</code></p></li>
+<li><p>Expected completion (or similar):</p>
+<pre><code>Positive: 0.75
+Neutral: 0.20
+Negative: 0.05</code></pre></li>
+</ul>
+<hr />
+<h2 id="exercise-4---e-mail-summarization">Exercise 4 - E-Mail
+Summarization</h2>
+<ul>
+<li><p>Exercise: Write a prompt that generates the expected
+completion</p></li>
+<li><p>Input text: Use your own email…</p></li>
+<li><p>Expected completion (or similar):</p>
+<pre><code>Summary: XYZ
+Open Questions: XYZ
+Action Items: XYZ </code></pre></li>
+</ul>
+<h2 id="exercise-5---rewriting">Exercise 5 - Rewriting</h2>
+<ul>
+<li>Exercise: Write a prompt that generates the expected completion</li>
+<li>Input text:
+<code>I was enjoying the sun, but then a huge cloud came and covered the sky.</code></li>
+<li>Expected completion:
+<code>She was enjoying the sun, but then a huge cloud came and covered the sky.</code></li>
+</ul>
+<h2 id="question-exercise-6---multiple-tasks">:question: Exercise 6 -
+Multiple Tasks</h2>
+<ul>
+<li><p>Exercise: Write a prompt that generates the expected
+output</p></li>
+<li><p>Input text:
+<code>I was enjoying the sun, but then a huge cloud came and covered the sky.</code></p></li>
+<li><p>Expected output:</p>
+<pre><code>{
+  &quot;translated&quot;: &quot;Ich genoss die Sonne, aber dann kam eine riesige Wolke und bedeckte den Himmel.&quot;,
+  &quot;negated&quot;: &quot;I was not enjoying the sun, and no huge cloud came and covered the sky.&quot;,
+ &quot;third_person&quot;: &quot;She was enjoying the sun, but then a huge cloud came and covered the sky.&quot;
+}</code></pre></li>
+</ul>
+<hr />
+<h2 id="exercise-7---data-extraction-to-json">Exercise 7 - Data
+extraction to JSON</h2>
+<ul>
+<li><p>Exercise: Write a prompt that generates the expected
+output</p></li>
+<li><p>Input text:</p>
+<pre><code>Hello, my name is Mateo Gomez. I lost my Credit card on August 17th, and I would like to request its cancellation. The last purchase I made was of a Chicken parmigiana dish at Contoso Restaurant, located near the Hollywood Museum, for $40. Below is my personal information for validation:
+Profession: Accountant
+Social Security number is 123-45-6789
+Date of birth: 9-9-1989
+Phone number: 949-555-0110
+Personal address: 1234 Hollywood Boulevard Los Angeles CA
+Linked email account: mateo@contosorestaurant.com
+Swift code: CHASUS33XXX</code></pre></li>
+<li><p>Expected output:</p>
+<pre><code>{
+    &quot;reason&quot;: &quot;Lost card&quot;,
+    &quot;classified_reason&quot;: &quot;lost_card&quot;,
+    &quot;name&quot;: &quot;Mateo Gomez&quot;,
+    &quot;ssn&quot;: &quot;123-45-6789&quot;,
+    &quot;dob&quot;: &quot;09/09/1989&quot;
+}</code></pre></li>
+</ul>
+<h2 id="exercise-8---fashion-product-description">Exercise 8 - Fashion
+product description</h2>
+<ul>
+<li><p>Exercise: Write a prompt that generates the expected
+completion</p></li>
+<li><p>Input text:</p>
+<pre><code>Season: Winter
+Style: Sweater
+Gender: Female
+Target group: Teenager
+Material: Cotton</code></pre></li>
+<li><p>Expected completion (or similar):</p>
+<pre><code>Stay warm and stylish this winter with our cozy cotton sweaters, perfect for the fashion-forward teenager. Refresh your wardrobe with the latest winter styles from our collection.</code></pre></li>
+</ul>
+<h2 id="exercise-9---write-a-blog-post">Exercise 9 - Write a Blog
+Post</h2>
+<ul>
+<li>Exercise: Write a blog post about a topic of your choice</li>
+<li>Input text: You choose</li>
+<li>Expected completion: a blogpost with hashtages</li>
+</ul>
+<h2 id="exercise-10---call-center">Exercise 10 - Call Center</h2>
+<ul>
+<li><p>Exercise: Analyze a call center conversation</p></li>
+<li><p>Input text:</p>
+<pre><code>Employee: &quot;Hello, this is Julia Schreider from Contoso Company. How can I help you today?&quot;
+Customer: &quot;Hi, I am Carsten Mueller. I ordered a package 10 days ago, on February 10th, and it was supposed to arrive in maximum 5 business days. I have called three times already and nobody could provide any more information. I want to know where the package is and I want the problem to be solved immediately. This is the worst service I had for a long time!&quot;
+Employee: &quot;I apologize for the inconvenience, Mr. Mueller. I understand your frustration and I&#39;m here to help. Can you please provide me with your order number so I can look into this for you?&quot;
+Customer: &quot;Yes, it&#39;s ACZ456789.&quot;
+Employee: &quot;Thank you. I&#39;m looking into it now. Can you please hold for a few minutes while I check the status of your package?&quot;
+Customer: &quot;Okay.&quot;
+Employee: &quot;Thank you for your patience. I am sorry to inform you that I am unable to find the status of your package. It appears to have left the sending address, but no up-to-date status on the current location. I will further investigate your case and get back to you as soon as possible via phone call. Could you please provide me your contact information?&quot;
+Customer: &quot;Ah not again. Anyway, my phone number is +4911112223344.&quot;
+Employee: &quot;I apologize again for the inconvenience. Is there anything else I can help you with today?&quot;
+Customer: &quot;No.&quot;
+Employee: &quot;Thank you. Have a great day!&quot;</code></pre></li>
+<li><p>Expected output:</p>
+<pre><code>{
+    &quot;classified_reason&quot;: &quot;lost_package&quot;,
+    &quot;resolve_status&quot;: &quot;unresolved&quot;,
+    &quot;call_summary&quot;: &quot;Customer ordered package 10 days ago and has not received it yet.&quot;,
+    &quot;customer_name&quot;: &quot;Carsten Mueller&quot;,
+    &quot;employee_name&quot;: &quot;Julia Schreider&quot;,
+    &quot;order_number&quot;: &quot;ACZ456789&quot;,
+    &quot;customer_contact_nr&quot;: &quot;+4911112223344&quot;,
+    &quot;new_address&quot;: &quot;N/A&quot;,
+    &quot;sentiment_initial&quot;: [&quot;angry&quot;, &quot;frustrated&quot;],
+    &quot;sentiment_final&quot;: [&quot;calm&quot;],
+    &quot;satisfaction_score_initial&quot;: 0,
+    &quot;satisfaction_score_final&quot;: 5,
+    &quot;eta&quot;: &quot;N/A&quot;,
+    &quot;action_item&quot;: [&quot;track_package&quot;, &quot;inquire_package_status&quot;, &quot;contact_customer&quot;]
+}</code></pre></li>
+</ul>
+<h2 id="exercise-11---few-shot-learning">Exercise 11 - Few-shot
+learning</h2>
+<ul>
+<li><p>Exercise: Write a few-shot learned prompt that classifies a movie
+summary.</p></li>
+<li><p>Data samples:</p>
+<pre><code>Paul Atreides, a brilliant and gifted young man born into a great destiny beyond his understanding, must travel to the most dangerous planet in the universe to ensure the future of his family and his people. As malevolent forces explode into conflict over the planet&#39;s exclusive supply of the most precious resource in existence-a commodity capable of unlocking humanity&#39;s greatest potential-only those who can conquer their fear will survive.
+[&#39;Action&#39;, &#39;Adventure&#39;, &#39;Science Fiction’]
+
+A botched store robbery places Wonder Woman in a global battle against a powerful and mysterious ancient force that puts her powers in jeopardy.
+[&#39;Action&#39;, &#39;Adventure&#39;, &#39;Fantasy&#39;]
+
+After the devastating events of Avengers: Infinity War, the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos&#39; actions and restore order to the universe once and for all, no matter what consequences may be in store.
+[&#39;Adventure&#39;, &#39;Science Fiction&#39;, &#39;Action&#39;]
+
+A widowed new dad copes with doubts, fears, heartache and dirty diapers as he sets out to raise his daughter on his own. Inspired by a true story.
+[&#39;Drama&#39;, &#39;Family&#39;, &#39;Comedy’]
+
+New data:
+Harry, Ron and Hermione walk away from their last year at Hogwarts to find and destroy the remaining Horcruxes, putting an end to Voldemort&#39;s bid for immortality. But with Harry&#39;s beloved Dumbledore dead and Voldemort&#39;s unscrupulous Death Eaters on the loose, the world is more dangerous than ever.</code></pre></li>
+<li><p>Expected completion: Classification of the new data
+point</p></li>
+</ul>
+<hr />
+<h2 id="exercise-12---nl-to-sql-with-codex">Exercise 12 - NL to SQL with
+Codex</h2>
+<ul>
+<li>Exercise: Write a prompt that generates the expected SQL
+statement</li>
+<li>Table information:
+<ul>
+<li>Table: customer // Columns: firstname, name, customer_id,
+address</li>
+<li>Table: orders // Columns: order_id, customer_id, product_id,
+product_amount</li>
+<li>Table: products // Columns: product_id, price, name,
+description</li>
+</ul></li>
+<li>Expected completion: a query that returns the top 10 orders and show
+the customer name</li>
+</ul>
+</body>
+</html>
