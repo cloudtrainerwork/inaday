@@ -1,0 +1,20 @@
+# OpenAI in a Day
+
+Start at the following url https://github.com/microsoft/azure-openai-in-a-day-workshop
+
+1. Click on the green button that says **<> Code**. Then select the **Codespaces** tab. Inside that tab click on the green button that says **Create codespace on main**
+
+    ![codespace 1](codespace1.png)
+
+1. Ignore and close any prompts requesting access to **Github Copilot**.
+
+1. Run the following command
+```console
+cd exercises
+pip install tiktoken
+pip install openai
+pip install numpy
+pip install pandas
+pip install python-dotenv 
+pip install scikit-learn
+```
